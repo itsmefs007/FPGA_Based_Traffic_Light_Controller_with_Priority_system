@@ -1,12 +1,12 @@
 # FPGA_Based_Traffic_Light_Controller_with_Priority_system
 
-Project Overview Design and implement a smart traffic light controller on an FPGA that: Manages a four-way intersection (can be adapted for T-junctions). Provides a priority override for emergency vehicles detected via sensors (RFID, IR, microphone, camera, or manual switch). Uses finite state machine (FSM) logic for traffic sequencing. Is coded in Verilog (or VHDL). Is simulated in ModelSim or Vivado and ready for Xilinx Spartan FPGA deployment.
+1. Project Overview Design and implement a smart traffic light controller on an FPGA that: Manages a four-way intersection (can be adapted for T-junctions). Provides a priority override for emergency vehicles detected via sensors (RFID, IR, microphone, camera, or manual switch). Uses finite state machine (FSM) logic for traffic sequencing. Is coded in Verilog (or VHDL). Is simulated in ModelSim or Vivado and ready for Xilinx Spartan FPGA deployment.
 
-System Architecture Functional Modules Clock Divider: Generates slower clock from the FPGA master clock for timing. FSM (Finite State Machine): Controls light transitions (Red, Yellow, Green) for each direction. Priority/Emergency Detection: Emergency vehicle sensor input overrides FSM state. Counter/Timer: Establishes green/yellow/red intervals for each direction. Inputs Lane sensors (manual switches, IR, RFID, microphone, camera, etc.). Emergency override input. Outputs Signals for Red, Yellow, Green lights for each direction.
+2. System Architecture Functional Modules Clock Divider: Generates slower clock from the FPGA master clock for timing. FSM (Finite State Machine): Controls light transitions (Red, Yellow, Green) for each direction. Priority/Emergency Detection: Emergency vehicle sensor input overrides FSM state. Counter/Timer: Establishes green/yellow/red intervals for each direction. Inputs Lane sensors (manual switches, IR, RFID, microphone, camera, etc.). Emergency override input. Outputs Signals for Red, Yellow, Green lights for each direction.
 
-FSM (Finite State Machine) Logic Normal Mode Each lane follows standard traffic sequence based on timer or vehicle presence. Priority (Emergency Override) Mode When emergency detected: Current green phase immediately switches to Red for all lanes except the emergency vehicle's lane. Emergency lane gets Green until vehicle passes or override is released. After priority phase, system resumes normal cycle.
+3. FSM (Finite State Machine) Logic Normal Mode Each lane follows standard traffic sequence based on timer or vehicle presence. Priority (Emergency Override) Mode When emergency detected: Current green phase immediately switches to Red for all lanes except the emergency vehicle's lane. Emergency lane gets Green until vehicle passes or override is released. After priority phase, system resumes normal cycle.
 
-4.Verilog Module Coding
+4. Verilog Module Coding
 
 module traffic_light_controller (
 
